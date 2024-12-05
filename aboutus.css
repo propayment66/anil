@@ -1,0 +1,30 @@
+body {
+    background-color: #1a1a2e;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.about-section {
+    background-color: #2c2c54; /* Dark purple background */
+    color: #ffffff; /* White text color */
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px; /* Adjust as needed */
+    text-align: center;
+    border: 2px solid #a64ac9; /* Adds border with specific color and width */
+}
+
+.about-section h2 {
+    color: #b3b3ff; /* Light purple color */
+    font-size: 24px;
+}
+
+.about-section p {
+    font-size: 16px;
+    line-height: 1.5;
+}
