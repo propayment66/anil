@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quick Support</title>
+  <link rel="stylesheet" href="quicksupport.css">
+</head>
+<body>
+  <div class="background">
+    <div class="container">
+      <h1>Quick Support</h1>
+      <form id="supportForm">
+        <!-- Name -->
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" placeholder="Name" required>
+        </div><br>
+        <!-- Phone Number -->
+        <div class="form-group">
+          <label for="phone">Phone:</label>
+          <input type="tel" id="phone" placeholder="Phone" maxlength="10" required>
+        </div><br>
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" placeholder="Email" required>
+        </div><br>
+        <!-- Message -->
+        <div class="form-group">
+          <label for="message">Message:</label>
+          <textarea id="message" placeholder="Describe your issue..." required></textarea>
+        </div><br>
+        <!-- Submit Button -->
+        <button type="submit">Submit</button>
+      </form>
+      <div id="responseMessage"></div>
+    </div>
+  </div>
+  <script src="quicksupport.js"></script>
+</body>
+</html>
