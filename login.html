@@ -9,30 +9,22 @@
 <body>
     <div class="login-container">
         <h2>Login</h2>
-        <form action="dashboard.html" method="POST">
-            <label for="email">email:</label>
-            <input type="email" id="email" name="email" required>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
             
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
-            
-            <button class="login-btn" onclick="func()">Login</button>
-            <script>
-                function func(){
-                    var email=document.getElementById("email").value;
-                    var password=document.getElementById("password").value;
-                    if (email=='digitalindiashop01@gmail.com'&&password=='anil7877') {
-                        alert("success full !")
-                        window.location.assign("signup.html")
-                    }
-                    else{
-                        alert("wrong email or password")
-                    }
 
-                }
-            </script>
+            <div class="remember-me">
+                <input type="checkbox" id="remember" name="remember">
+                <label for="remember">Remember Me</label>
+            </div>
+            
+            <button type="submit">Login</button>
         </form>
         <p>Don't have an account? <a href="signup.html">Sign up</a></p>
     </div>
+    <script src="login.js"></script>
 </body>
 </html>
