@@ -7,36 +7,47 @@
     <link rel="stylesheet" href="indexa.css">
 </head>
 <body>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
     <div class="admin-container">
-        <aside class="sidebar">
+        <aside class="sidebar" id="sidebar">
             <div class="sidebar-header">
-                <h2>propayment</h2>
+                <h2>TurboPayz</h2>
                 <span>Starter Plan</span>
             </div>
             <nav class="nav-menu">
-                <a href="#" class="nav-item">Home</a>
+                <a href="indexa.html" class="nav-item">Home</a>
                 <a href="#" class="nav-item">Product</a>
                 <a href="#" class="nav-item">Analytics</a>
-                <a href="#" class="nav-item">Wallet</a>
+                <a href="wallet.html" class="nav-item">Wallet</a>
                 <a href="#" class="nav-item">Library</a>
-                <a href="#" class="nav-item">Setting</a>
-                <a href="#" class="nav-item">Logout</a>
+                <a href="#" class="nav-item" id="settingToggle">Setting</a>
+                <div id="settingOptions" class="dropdown-content">
+                    <a href="#">•Withdrawals</a>
+                    <a href="#">•ACCOUNT SETTING</a>
+                </div>
+                <a href="#" class="nav-item" id="logoutBtn">Logout</a>
             </nav>
         </aside>
         <main class="main-content">
             <header class="main-header">
-                <h1>Good evening, <span id="usernameDisplay">Digital India shop</span></h1>
+                <h1>Good evening, <span id="usernameDisplay">user</span></h1>
                 <p>What would you like to create?</p>
             </header>
             <section class="create-options">
-                <button class="create-btn">Payment Page</button>
-                <button class="create-btn">Edit/View</button>
-                <button class="create-btn" disabled>Create Super Profile (Coming Soon)</button>
+                <button class="create-btn">
+                    <img src="C:/Users/My/Downloads/2674095_object_money_web_essential_icon (1).png" alt="Payment Page Icon"> Payment Page
+                </button>
+                <button class="create-btn">
+                    <img src="C:/Users/My/Downloads/zrl7djpa.png" alt="Edit View Icon"> Edit/View
+                </button>
+                <button class="create-btn" disabled>
+                    <img src="C:/Users/My/Downloads/10758940_rocket_launch_icon.png" alt="Create Super Profile Icon"> Create Super Profile (Coming Soon)
+                </button>
             </section>
             <section class="plan-details">
                 <h2>Current Plan: Starter</h2>
                 <p>Price: ₹0.00</p>
-                <p>Member since: 24th Oct 2024</p>
+                <p>Member since: <span id="loginDate">Loading...</span></p>
             </section>
             <section class="referral">
                 <h2>Start with your First Referral</h2>
