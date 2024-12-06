@@ -1,3 +1,8 @@
+function toggleMenu() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('show');
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     const username = localStorage.getItem('username');
     if (username) {
@@ -16,14 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
     settingToggle.addEventListener('click', function(event) {
         event.preventDefault();
         settingOptions.style.display = settingOptions.style.display === 'block' ? 'none' : 'block';
-    });
-
-    // Sidebar toggle for mobile view
-    const sidebar = document.getElementById('sidebar');
-    const toggleBtn = document.querySelector('.menu-toggle');
-
-    toggleBtn.addEventListener('click', function() {
-        sidebar.classList.toggle('show');
     });
 
     // Logout functionality
