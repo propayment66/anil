@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallet</title>
+    <link rel="stylesheet" href="wallet.css">
+</head>
+<body>
+    <!-- Back Button -->
+    <button class="back-btn" onclick="indexa.html();">← Back</button>
+
+    <div class="wallet-container">
+        <header>
+            <h1>Wallet</h1>
+        </header>
+        <div class="wallet-balance">
+            <div class="balance-details">
+                <h2>Wallet Balance</h2>
+                <div class="amounts">
+                    <div>
+                        <p>Amount in Wallet</p>
+                        <h3 id="walletAmount">₹0.00</h3>
+                    </div>
+                    <div>
+                        <p>Withdrawn So Far</p>
+                        <h3 id="withdrawnAmount">₹0.00</h3>
+                    </div>
+                </div>
+                <input type="number" id="withdrawInput" placeholder="Enter amount to withdraw" />
+                <button class="withdraw-button" id="withdrawBtn">WITHDRAW</button>
+            </div>
+            <div class="current-plan">
+                <h3>Current Plan</h3>
+                <p><span class="plan-name">Starter</span> <span class="status active">Active</span></p>
+                <p>Price: ₹0.00</p>
+                <p>Member since: <span id="loginDate"></span></p>
+            </div>
+        </div>
+        <section class="earnings">
+            <h2>Earnings</h2>
+            <div id="soldProducts">
+                <p>No sales yet.</p>
+            </div>
+        </section>
+        <section class="withdraw-history">
+            <h2>Withdrawal History</h2>
+            <div id="withdrawHistory">
+                <p>No withdrawals yet.</p>
+            </div>
+        </section>
+    </div>
+
+    <script src="wallet.js"></script>
+</body>
+</html>
