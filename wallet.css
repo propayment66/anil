@@ -1,0 +1,255 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Wallet Container */
+.wallet-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.wallet-container header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.wallet-container header h1 {
+    font-size: 2rem;
+    color: #333;
+}
+
+/* Wallet Balance Section */
+.wallet-balance {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 20px;
+}
+
+.balance-details {
+    flex: 1;
+    background: #f9f9fb;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+}
+
+.balance-details h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.amounts {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.amounts div {
+    text-align: center;
+}
+
+.amounts p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.amounts h3 {
+    font-size: 1.8rem;
+    color: #333;
+}
+
+#withdrawInput {
+    width: calc(100% - 10px);
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    outline: none;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.withdraw-button {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #4caf50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.withdraw-button:hover {
+    background-color: #43a047;
+}
+
+/* Current Plan Section */
+.current-plan {
+    flex: 1;
+    background: #f9f9fb;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+}
+
+.current-plan h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.current-plan p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.status {
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    margin-left: 10px;
+}
+
+.status.active {
+    background-color: #d4f8e8;
+    color: #2a9d67;
+}
+
+/* Earnings Section */
+.earnings {
+    margin-top: 20px;
+}
+
+.earnings h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.earnings-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #f9f9fb;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.earnings-item p {
+    font-size: 1rem;
+    color: #333;
+    margin: 0;
+}
+
+.earnings-item span {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Withdrawal History Section */
+.withdraw-history {
+    margin-top: 20px;
+}
+
+.withdraw-history h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #f9f9fb;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.history-item p {
+    font-size: 1rem;
+    color: #333;
+    margin: 0;
+}
+
+.history-item span {
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+.history-item span.success {
+    background-color: #d4f8e8;
+    color: #2a9d67;
+}
+
+.history-item span.failed {
+    background-color: #fddede;
+    color: #d9534f;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .wallet-balance {
+        flex-direction: column;
+    }
+
+    .balance-details,
+    .current-plan {
+        flex: unset;
+        width: 100%;
+    }
+}
+/* Back Button Styling */
+.back-btn {
+    background-color: #3366cc;
+    color: white;
+    font-size: 1.2rem;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+}
+
+.back-btn:hover {
+    background-color: #254b91;
+}
+
+.back-btn:focus {
+    outline: none;
+}
+
