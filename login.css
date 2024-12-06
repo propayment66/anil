@@ -28,7 +28,8 @@ body {
     text-align: left;
 }
 
-.login-container input {
+.login-container input[type="text"],
+.login-container input[type="password"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -36,6 +37,16 @@ body {
     border-radius: 5px;
     background-color: #444;
     color: #fff;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.remember-me input {
+    margin-right: 10px;
 }
 
 .login-container button {
