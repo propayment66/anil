@@ -1,0 +1,161 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #4a4a8a;
+  }
+  
+  /* Tabs */
+  .tabs {
+    display: flex;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 20px;
+  }
+  
+  .tab-link {
+    flex: 1;
+    padding: 10px 15px;
+    text-align: center;
+    background: #f9f9f9;
+    border: none;
+    cursor: pointer;
+    color: #555;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  .tab-link:hover {
+    background: #eee;
+  }
+  
+  .tab-link.active {
+    background: #4a4a8a;
+    color: white;
+  }
+  
+  .tab-content {
+    display: none;
+  }
+  
+  .tab-content.active {
+    display: block;
+  }
+  
+  /* Form Styling */
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="date"],
+  input[type="password"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  textarea {
+    resize: none;
+  }
+  
+  button {
+    background: #4a4a8a;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  button:hover {
+    background: #38386a;
+  }
+  
+  /* Image Upload Styling */
+  img {
+    max-width: 150px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  
+  input[type="file"] {
+    display: none;
+  }
+  
+  /* Error and Response Messages */
+  .error {
+    color: red;
+    font-size: 0.9em;
+  }
+  
+  #responseMessage,
+  #passwordResponseMessage {
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 0.9em;
+    color: green;
+  }
+  
+  /* Buttons inside forms */
+  .btn-update {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    font-size: 1em;
+    font-weight: bold;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 600px) {
+    .container {
+      padding: 10px;
+    }
+  
+    .tabs {
+      flex-direction: column;
+    }
+  
+    .tab-link {
+      margin-bottom: 5px;
+    }
+  
+    img {
+      max-width: 100%;
+    }
+  }
+  
