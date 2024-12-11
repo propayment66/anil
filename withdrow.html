@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Withdrawals</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f7fa;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .wallet-info {
+            background-color: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .wallet-info button {
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .card {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 15px;
+        }
+
+        .card p {
+            margin: 5px 0;
+        }
+
+        .status {
+            color: green;
+            font-weight: bold;
+        }
+
+        .button {
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 8px 12px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .withdrawal-info p {
+            margin: 5px 0;
+        }
+
+        .plan-info {
+            text-align: right;
+        }
+
+        .plan-info p {
+            margin: 5px 0;
+        }
+
+        .plan-active {
+            color: green;
+            font-weight: bold;
+        }
+
+        .form {
+            display: none;
+            margin-top: 15px;
+        }
+
+        .form input {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form button {
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+
+        .checkbox-container {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox-container input {
+            margin-right: 10px;
+        }
+
+        .submitted-info {
+            margin-top: 10px;
+            background-color: #f1f8e9;
+            padding: 10px;
+            border: 1px solid #c5e1a5;
+            border-radius: 4px;
+        }
+
+        .submitted-info p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Withdrawals</h1>
+
+        <div class="wallet-info">
+            <p>You currently have <span id="wallet-balance">₹199.25</span> in your wallet.</p>
+            <button>View</button>
+        </div>
+
+        <div class="section">
+            <h2>1. Security Pin</h2>
+            <div class="card">
+                <p>✅ Your security PIN is <span class="status">active</span></p>
+                <button class="button" onclick="togglePinForm()">Change PIN</button>
+                <div class="form" id="pin-form">
+                    <input type="password" placeholder="Enter new PIN">
+                    <input type="password" placeholder="Confirm new PIN">
+                    <button>Reset PIN</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>2. Withdrawal Information</h2>
+            <div class="card withdrawal-info">
+                <div class="checkbox-container">
+                    <input type="checkbox" id="upi-checkbox" onclick="toggleUPI()">
+                    <label for="upi-checkbox">Withdraw to UPI Account</label>
+                </div>
+                <input type="text" id="upi-input" placeholder="Enter UPI ID" style="display:none;">
+
+                <div class="checkbox-container">
+                    <input type="checkbox" id="bank-checkbox" onclick="toggleBankDetails()">
+                    <label for="bank-checkbox">Withdraw to Bank Account</label>
+                </div>
+                <div id="bank-details" style="display:none;">
+                    <input type="text" id="account-holder" placeholder="Account holder name">
+                    <input type="text" id="account-number" placeholder="Account number">
+                    <input type="text" id="ifsc-code" placeholder="IFSC code">
+                </div>
+
+                <button class="button" onclick="submitDetails()">Submit</button>
+                <div id="submitted-info" class="submitted-info" style="display:none;"></div>
+            </div>
+        </div>
+
+        <div class="section plan-info">
+            <h2>Current Plan</h2>
+            <p><span class="plan-active">✔ Active</span></p>
+            <p>Price: <b>₹0.00</b></p>
+            <p>Member since: <b id="member-since">24th Oct 2024</b></p>
+        </div>
+    </div>
+
+    <script>
+        // Simulate the signup date (replace this with a real backend value if needed)
+        document.getElementById('member-since').innerText = '12th Dec 2023';
+
+        function togglePinForm() {
+            const pinForm = document.getElementById('pin-form');
+            pinForm.style.display = pinForm.style.display === 'none' || pinForm.style.display === '' ? 'block' : 'none';
+        }
+
+        function toggleUPI() {
+            const upiInput = document.getElementById('upi-input');
+            upiInput.style.display = upiInput.style.display === 'none' || upiInput.style.display === '' ? 'block' : 'none';
+        }
+
+        function toggleBankDetails() {
+            const bankDetails = document.getElementById('bank-details');
+            bankDetails.style.display = bankDetails.style.display === 'none' || bankDetails.style.display === '' ? 'block' : 'none';
+        }
+
+        function submitDetails() {
+            const upiInput = document.getElementById('upi-input');
+            const accountHolder = document.getElementById('account-holder').value;
+            const accountNumber = document.getElementById('account-number').value;
+            const ifscCode = document.getElementById('ifsc-code').value;
+
+            const submittedInfo = document.getElementById('submitted-info');
+            let info = '';
+
+            if (upiInput.style.display === 'block' && upiInput.value) {
+                info += `<p><b>UPI ID:</b> ${upiInput.value}</p>`;
+            }
+            if (accountHolder || accountNumber || ifscCode) {
+                info += `<p><b>Bank Details:</b></p>`;
+                info += `<p>Account Holder: ${accountHolder}</p>`;
+                info += `<p>Account Number: ${accountNumber}</p>`;
+                info += `<p>IFSC Code: ${ifscCode}</p>`;
+            }
+
+            if (info) {
+                submittedInfo.innerHTML = info;
+                submittedInfo.style.display = 'block';
+            }
+        }
+    </script>
+    </body>
+    </html>
