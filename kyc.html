@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KYC Details</title>
+  <link rel="stylesheet" href="kyc.css">
+</head>
+<body>
+  <div class="container">
+    <h1>KYC Details</h1>
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab-link active" onclick="openTab(event, 'personalDetails')">Personal Details</button>
+      <button class="tab-link" onclick="openTab(event, 'changePassword')">Change Password</button>
+    </div>
+
+    <!-- Personal Details Tab -->
+    <div id="personalDetails" class="tab-content active">
+      <form id="kycForm">
+        <!-- Profile Picture -->
+        <div class="form-group">
+          <label>Update Profile Picture</label>
+          <img id="profilePic" src="https://cibasgroup.com/wp-content/uploads/2022/04/Portrait_Placeholder2.png" alt="Profile Picture">
+          <input type="file" id="profilePicInput" accept="image/*" style="display: none;" onchange="previewImage('profilePic', this)">
+          <button type="button" onclick="document.getElementById('profilePicInput').click();">Edit</button>
+          <button type="button" onclick="resetImage('profilePic', 'https://cibasgroup.com/wp-content/uploads/2022/04/Portrait_Placeholder2.png')">Reset</button>
+        </div>
+
+        <!-- Personal Information -->
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" placeholder="Enter First Name" required>
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" placeholder="Enter Last Name" required>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="Enter Email" required>
+        </div>
+        <div class="form-group">
+          <label>Phone</label>
+          <input type="tel" placeholder="Enter Phone" maxlength="10" required>
+        </div>
+        <div class="form-group">
+          <label>Username</label>
+          <input type="text" placeholder="Enter Username" required>
+        </div>
+        <div class="form-group">
+          <label>Date of Birth</label>
+          <input type="date" required>
+        </div>
+
+        <!-- Aadhar and PAN Information -->
+        <div class="form-group">
+          <label>Aadhar Card Number</label>
+          <input type="text" id="aadhar" maxlength="12" placeholder="1234 5678 9012" oninput="validateAadhaar()" required>
+          <p class="error" id="error-msg"></p>
+        </div>
+        <div class="form-group">
+          <label>Upload Aadhar Card (Front)</label>
+          <img id="aadharFront" src="https://i2.wp.com/aadhar-uidai.in/wp-content/uploads/2018/07/main-qimg-4a3032007d087580af4a6eff50634659.png?fit=602%2C426&ssl=1" alt="Aadhar Front">
+          <input type="file" id="aadharFrontInput" accept="image/*" style="display: none;" onchange="previewImage('aadharFront', this)">
+          <button type="button" onclick="document.getElementById('aadharFrontInput').click();">Edit</button>
+          <button type="button" onclick="resetImage('aadharFront', 'https://i2.wp.com/aadhar-uidai.in/wp-content/uploads/2018/07/main-qimg-4a3032007d087580af4a6eff50634659.png?fit=602%2C426&ssl=1')">Reset</button>
+        </div>
+        <div class="form-group">
+          <label>Upload Aadhar Card (Back)</label>
+          <img id="aadharBack" src="https://th.bing.com/th/id/OIP.9rAr56qGLO8jiBAE4abjWgHaE8?w=1200&h=800&rs=1&pid=ImgDetMain" alt="Aadhar Back">
+          <input type="file" id="aadharBackInput" accept="image/*" style="display: none;" onchange="previewImage('aadharBack', this)">
+          <button type="button" onclick="document.getElementById('aadharBackInput').click();">Edit</button>
+          <button type="button" onclick="resetImage('aadharBack', 'https://via.placeholder.com/150')">Reset</button>
+        </div>
+        <div class="form-group">
+          <label>PAN Card Number</label>
+          <input type="text" placeholder="Enter PAN Number" required>
+        </div>
+        <div class="form-group">
+          <label>Upload PAN Card</label>
+          <img id="panCard" src="https://aktassociates.com/blog/wp-content/uploads/2023/05/pan-card-gd2bdde8b6_1920-e1688818468619.png" alt="PAN Card">
+          <input type="file" id="panCardInput" accept="image/*" style="display: none;" onchange="previewImage('panCard', this)">
+          <button type="button" onclick="document.getElementById('panCardInput').click();">Edit</button>
+          <button type="button" onclick="resetImage('panCard', 'https://via.placeholder.com/150')">Reset</button>
+        </div>
+        <div class="form-group">
+          <label>Bio</label>
+          <textarea rows="4" placeholder="Enter your bio"></textarea>
+        </div>
+        <button type="submit" class="btn-update">Update</button>
+        <div id="responseMessage"></div>
+      </form>
+    </div>
+
+    <!-- Change Password Tab -->
+    <div id="changePassword" class="tab-content">
+      <form id="passwordForm">
+        <div class="form-group">
+          <label>Old Password *</label>
+          <input type="password" placeholder="Enter Old Password" required>
+        </div>
+        <div class="form-group">
+          <label>New Password *</label>
+          <input type="password" placeholder="Enter New Password" required>
+        </div>
+        <div class="form-group">
+          <label>Confirm Password *</label>
+          <input type="password" placeholder="Confirm New Password" required>
+        </div>
+        <button type="submit" class="btn-update">Update</button>
+        <div id="passwordResponseMessage"></div>
+      </form>
+    </div>
+  </div>
+  <script src="kyc.js"></script>
+</body>
+</html>
